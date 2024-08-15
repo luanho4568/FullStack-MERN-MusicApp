@@ -1,10 +1,17 @@
-/* eslint-disable no-unused-vars */
-import React from 'react'
+import Display from "./components/Display";
+import Player from "./components/Player";
+import Sidebar from "./components/SideBar";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+    return (
+        <div className="h-screen bg-black">
+            <div className="h-[90%] flex">
+                <Sidebar />
+                <Display />
+            </div>
+            <Player />
+        </div>
+    );
+};
 
-export default App
+export default App;
