@@ -34,7 +34,13 @@ const listSongService = async () => {
 };
 const removeSongService = async (id) => {
     try {
-        await songModel.findByIdAndDelete(id);
+        let result = await songModel.findByIdAndDelete(id);
+        if (!result) {
+            return {
+                status: false,
+                message: "Song not found",
+            };
+        }
         return {
             status: true,
             message: "Song removed successfully!",

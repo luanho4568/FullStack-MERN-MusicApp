@@ -52,7 +52,7 @@ const listSongController = async (req, res) => {
 
 const removeSongController = async (req, res) => {
     try {
-        const id = req.body.id;
+        const id = req.params.id;
         const data = await removeSongService(id);
         return res.status(200).json({
             status: data.status,

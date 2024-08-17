@@ -34,7 +34,13 @@ const listAlbumService = async () => {
 };
 const removeAlbumService = async (id) => {
     try {
-        await albumModel.findByIdAndDelete(id);
+        const result = await albumModel.findByIdAndDelete(id);
+        if (!result) {
+            return {
+                status: false,
+                message: "Album not found",
+            };
+        }
         return {
             status: true,
             message: "Album removed successfully!",

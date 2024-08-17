@@ -18,7 +18,7 @@ const initSongRoutes = (app) => {
         addSongController
     );
     songRouter.get("/list", listSongController);
-    songRouter.post("/remove", removeSongController);
+    songRouter.delete("/delete/:id", removeSongController);
 
     return app.use("/api/song", songRouter);
 };

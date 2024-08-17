@@ -8,6 +8,7 @@ import ListSong from "./pages/ListSong";
 import ListAlbum from "./pages/ListAlbum";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+
 const App = () => {
     return (
         <div className="flex items-center min-h-screen">

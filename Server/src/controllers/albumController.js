@@ -45,7 +45,7 @@ const listAlbumController = async (req, res) => {
 };
 const removeAlbumController = async (req, res) => {
     try {
-        const id = req.body.id;
+        const id = req.params.id;
         const data = await removeAlbumService(id);
         return res.status(200).json({
             status: data.status,

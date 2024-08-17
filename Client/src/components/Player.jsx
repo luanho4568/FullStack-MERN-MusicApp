@@ -3,8 +3,9 @@ import { assets, songsData } from "../assets/assets";
 import { PlayerContext } from "../context/PlayerContext";
 
 const Player = () => {
-    const { seekBar, seekBg, playStatus, play, pause, track, time, next, previous , seekSong} = useContext(PlayerContext);
-    return (
+    const { seekBar, seekBg, playStatus, play, pause, track, time, next, previous, seekSong } =
+        useContext(PlayerContext);
+    return track ? (
         <div className="h-[10%] bg-black flex justify-between items-center text-white px-4">
             <div className="hidden lg:flex items-center gap-4">
                 <img className="w-12" src={track.image} alt="" />
@@ -29,7 +30,11 @@ const Player = () => {
                     <p>
                         {time.currentTime.minute}:{time.currentTime.second}
                     </p>
-                    <div ref={seekBg} onClick={seekSong} className="w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer">
+                    <div
+                        ref={seekBg}
+                        onClick={seekSong}
+                        className="w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer"
+                    >
                         <hr ref={seekBar} className="h-1 border-none w-0 bg-orange-600 rounded-full" />
                     </div>
                     <p>
@@ -48,7 +53,7 @@ const Player = () => {
                 <img src={assets.zoom_icon} alt="" className="w-4" />
             </div>
         </div>
-    );
+    ) : null;
 };
 
 export default Player;
